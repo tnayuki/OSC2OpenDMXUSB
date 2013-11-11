@@ -12,7 +12,7 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include "../ftd2xx.h"
+#include <ftd2xx.h>
 
 void panic(const char *panicstr, ...)
 {
