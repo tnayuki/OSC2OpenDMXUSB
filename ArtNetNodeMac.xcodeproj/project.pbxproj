@@ -25,8 +25,6 @@
 		E92729BE18309757000E7BC5 /* receive.c in Sources */ = {isa = PBXBuildFile; fileRef = E927299E18308DB2000E7BC5 /* receive.c */; };
 		E92729BF1830975B000E7BC5 /* tod.c in Sources */ = {isa = PBXBuildFile; fileRef = E927299F18308DB2000E7BC5 /* tod.c */; };
 		E92729C01830975D000E7BC5 /* transmit.c in Sources */ = {isa = PBXBuildFile; fileRef = E92729A118308DB2000E7BC5 /* transmit.c */; };
-		E9291317182E90C7008F56FA /* libftd2xx.1.2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E9291316182E90C7008F56FA /* libftd2xx.1.2.2.dylib */; };
-		E929131B182E9194008F56FA /* opendmx.c in Sources */ = {isa = PBXBuildFile; fileRef = E929131A182E9194008F56FA /* opendmx.c */; };
 		E939414F182C919900BDF381 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E939414E182C919900BDF381 /* Cocoa.framework */; };
 		E9394159182C919900BDF381 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9394157182C919900BDF381 /* InfoPlist.strings */; };
 		E939415B182C919900BDF381 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E939415A182C919900BDF381 /* main.m */; };
@@ -38,7 +36,10 @@
 		E939416F182C919900BDF381 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E939414E182C919900BDF381 /* Cocoa.framework */; };
 		E9394177182C919900BDF381 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9394175182C919900BDF381 /* InfoPlist.strings */; };
 		E9394179182C919900BDF381 /* ArtNetNodeMacTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E9394178182C919900BDF381 /* ArtNetNodeMacTests.m */; };
-		E939419E182CA45F00BDF381 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E939419D182CA45F00BDF381 /* SystemConfiguration.framework */; };
+		E99FEB081859B09400919375 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E99FEB071859B09400919375 /* IOKit.framework */; };
+		E99FEB091859B0A500919375 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E99FEB071859B09400919375 /* IOKit.framework */; };
+		E99FEB0A1859B0BE00919375 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E939419D182CA45F00BDF381 /* SystemConfiguration.framework */; };
+		E99FEB0B1859B0C800919375 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E939419D182CA45F00BDF381 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,8 +66,6 @@
 		E92729A018308DB2000E7BC5 /* tod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tod.h; sourceTree = "<group>"; };
 		E92729A118308DB2000E7BC5 /* transmit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = transmit.c; sourceTree = "<group>"; };
 		E92729A218308DB2000E7BC5 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
-		E92729A418308DB2000E7BC5 /* ftd2xx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ftd2xx.h; sourceTree = "<group>"; };
-		E92729A518308DB2000E7BC5 /* WinTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WinTypes.h; sourceTree = "<group>"; };
 		E92729AD1830973F000E7BC5 /* libusb-1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libusb-1.0.a"; sourceTree = "<group>"; };
 		E92729AE1830973F000E7BC5 /* libusb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libusb.h; sourceTree = "<group>"; };
 		E92729B01830973F000E7BC5 /* ftdi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ftdi.c; sourceTree = "<group>"; };
@@ -74,8 +73,6 @@
 		E92729B21830973F000E7BC5 /* ftdi_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ftdi_i.h; sourceTree = "<group>"; };
 		E92729B31830973F000E7BC5 /* ftdi_stream.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ftdi_stream.c; sourceTree = "<group>"; };
 		E92729B41830973F000E7BC5 /* ftdi_version_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ftdi_version_i.h; sourceTree = "<group>"; };
-		E9291316182E90C7008F56FA /* libftd2xx.1.2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libftd2xx.1.2.2.dylib; path = /usr/local/lib/libftd2xx.1.2.2.dylib; sourceTree = "<absolute>"; };
-		E929131A182E9194008F56FA /* opendmx.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = opendmx.c; sourceTree = "<group>"; };
 		E939414B182C919900BDF381 /* ArtNetNodeMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArtNetNodeMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E939414E182C919900BDF381 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		E9394151182C919900BDF381 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -96,6 +93,7 @@
 		E9394176182C919900BDF381 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E9394178182C919900BDF381 /* ArtNetNodeMacTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArtNetNodeMacTests.m; sourceTree = "<group>"; };
 		E939419D182CA45F00BDF381 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		E99FEB071859B09400919375 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,10 +101,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E92729B51830973F000E7BC5 /* libusb-1.0.a in Frameworks */,
 				E939414F182C919900BDF381 /* Cocoa.framework in Frameworks */,
-				E9291317182E90C7008F56FA /* libftd2xx.1.2.2.dylib in Frameworks */,
-				E939419E182CA45F00BDF381 /* SystemConfiguration.framework in Frameworks */,
+				E99FEB0A1859B0BE00919375 /* SystemConfiguration.framework in Frameworks */,
+				E99FEB081859B09400919375 /* IOKit.framework in Frameworks */,
+				E92729B51830973F000E7BC5 /* libusb-1.0.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +114,8 @@
 			files = (
 				E939416F182C919900BDF381 /* Cocoa.framework in Frameworks */,
 				E939416E182C919900BDF381 /* XCTest.framework in Frameworks */,
+				E99FEB0B1859B0C800919375 /* SystemConfiguration.framework in Frameworks */,
+				E99FEB091859B0A500919375 /* IOKit.framework in Frameworks */,
 				E92729B61830973F000E7BC5 /* libusb-1.0.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -149,15 +149,6 @@
 				E92729A118308DB2000E7BC5 /* transmit.c */,
 			);
 			path = artnet;
-			sourceTree = "<group>";
-		};
-		E92729A318308DB2000E7BC5 /* ftd2xx */ = {
-			isa = PBXGroup;
-			children = (
-				E92729A418308DB2000E7BC5 /* ftd2xx.h */,
-				E92729A518308DB2000E7BC5 /* WinTypes.h */,
-			);
-			path = ftd2xx;
 			sourceTree = "<group>";
 		};
 		E92729AC1830973F000E7BC5 /* libusb */ = {
@@ -204,9 +195,9 @@
 		E939414D182C919900BDF381 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E99FEB071859B09400919375 /* IOKit.framework */,
 				E939414E182C919900BDF381 /* Cocoa.framework */,
 				E939419D182CA45F00BDF381 /* SystemConfiguration.framework */,
-				E9291316182E90C7008F56FA /* libftd2xx.1.2.2.dylib */,
 				E939416D182C919900BDF381 /* XCTest.framework */,
 				E9394150182C919900BDF381 /* Other Frameworks */,
 			);
@@ -231,7 +222,6 @@
 				E9394163182C919900BDF381 /* MainMenu.xib */,
 				E9394166182C919900BDF381 /* Images.xcassets */,
 				E9394155182C919900BDF381 /* Supporting Files */,
-				E929131A182E9194008F56FA /* opendmx.c */,
 			);
 			path = ArtNetNodeMac;
 			sourceTree = "<group>";
@@ -272,7 +262,6 @@
 				E92729AC1830973F000E7BC5 /* libusb */,
 				E92729AF1830973F000E7BC5 /* libftdi1 */,
 				E927299418308DB2000E7BC5 /* libartnet */,
-				E92729A318308DB2000E7BC5 /* ftd2xx */,
 			);
 			path = Vendor;
 			sourceTree = "<group>";
@@ -384,7 +373,6 @@
 				E92729A918308DB2000E7BC5 /* receive.c in Sources */,
 				E92729AB18308DB2000E7BC5 /* transmit.c in Sources */,
 				E92729AA18308DB2000E7BC5 /* tod.c in Sources */,
-				E929131B182E9194008F56FA /* opendmx.c in Sources */,
 				E92729A618308DB2000E7BC5 /* artnet.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -546,7 +534,7 @@
 				GCC_PREFIX_HEADER = "ArtNetNodeMac/ArtNetNodeMac-Prefix.pch";
 				INFOPLIST_FILE = "ArtNetNodeMac/ArtNetNodeMac-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
-					/usr/local/lib,
+					Vendor/libusb,
 					/Users/tnayuki/Developer/Xcode/ArtNetNodeMac/Vendor/libusb,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -563,7 +551,7 @@
 				GCC_PREFIX_HEADER = "ArtNetNodeMac/ArtNetNodeMac-Prefix.pch";
 				INFOPLIST_FILE = "ArtNetNodeMac/ArtNetNodeMac-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
-					/usr/local/lib,
+					Vendor/libusb,
 					/Users/tnayuki/Developer/Xcode/ArtNetNodeMac/Vendor/libusb,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
