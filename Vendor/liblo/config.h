@@ -1,23 +1,29 @@
 /* config.h.  Generated from config.h.in by configure.  */
 /* config.h.in.  Generated from configure.ac by autoheader.  */
 
+/* Define if building universal (internal helper macro) */
+/* #undef AC_APPLE_UNIVERSAL_BUILD */
+
 /* Define this to enable ipv6. */
 /* #undef ENABLE_IPV6 */
+
+/* Define this to enable threads. */
+#define ENABLE_THREADS 1
 
 /* Define to 1 if you have the <dlfcn.h> header file. */
 #define HAVE_DLFCN_H 1
 
-/* Define to 1 if inet_aton() is available. */
-#define HAVE_INET_ATON 1
+/* Define to 1 if you have the `getifaddrs' function. */
+#define HAVE_GETIFADDRS 1
+
+/* Define to 1 if inet_pton() is available. */
+#define HAVE_INET_PTON 1
 
 /* Define to 1 if you have the <inttypes.h> header file. */
 #define HAVE_INTTYPES_H 1
 
 /* Define to 1 if you have the `m' library (-lm). */
 /* #undef HAVE_LIBM */
-
-/* Define to 1 if you have the `pthread' library (-lpthread). */
-#define HAVE_LIBPTHREAD 1
 
 /* Define to 1 if you have the <memory.h> header file. */
 #define HAVE_MEMORY_H 1
@@ -78,19 +84,37 @@
 #define PACKAGE_NAME "liblo"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING "liblo 0.26"
+#define PACKAGE_STRING "liblo 0.28rc"
 
 /* Define to the one symbol short name of this package. */
 #define PACKAGE_TARNAME "liblo"
 
+/* Define to the home page for this package. */
+#define PACKAGE_URL ""
+
 /* Define to the version of this package. */
-#define PACKAGE_VERSION "0.26"
+#define PACKAGE_VERSION "0.28rc"
+
+/* printf code for type long long int */
+#define PRINTF_LL "ll"
 
 /* Define to 1 if you have the ANSI C header files. */
 #define STDC_HEADERS 1
 
 /* Version number of package */
-#define VERSION "0.26"
+#define VERSION "0.28rc"
+
+/* Define WORDS_BIGENDIAN to 1 if your processor stores words with the most
+   significant byte first (like Motorola and SPARC, unlike Intel). */
+#if defined AC_APPLE_UNIVERSAL_BUILD
+# if defined __BIG_ENDIAN__
+#  define WORDS_BIGENDIAN 1
+# endif
+#else
+# ifndef WORDS_BIGENDIAN
+/* #  undef WORDS_BIGENDIAN */
+# endif
+#endif
 
 /* Define to empty if `const' does not conform to ANSI C. */
 /* #undef const */

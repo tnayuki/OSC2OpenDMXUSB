@@ -18,9 +18,21 @@
 #define LO_ENDIAN_H
 
 #include <sys/types.h>
-#include <stdint.h>
 
-#ifdef WIN32
+#ifdef _MSC_VER
+#ifndef UINTSDEFINED
+#define UINTSDEFINED
+#define int32_t __int32
+#define int64_t __int64
+#define uint32_t unsigned __int32
+#define uint64_t unsigned __int64
+#define uint8_t unsigned __int8
+#endif
+#else
+#include <stdint.h>
+#endif
+
+#if defined(WIN32) || defined(_MSC_VER)
 #include <winsock2.h>
 #include <ws2tcpip.h>
 #else
@@ -86,7 +98,12 @@ typedef union {
     } part;
 } lo_split64;
 
-static inline uint64_t lo_swap64(uint64_t x)
+#ifdef _MSC_VER
+#define LO_INLINE __inline
+#else
+#define LO_INLINE inline
+#endif
+static LO_INLINE uint64_t lo_swap64(uint64_t x)
 {
     lo_split64 in, out;
 
@@ -96,11 +113,30 @@ static inline uint64_t lo_swap64(uint64_t x)
 
     return out.all;
 }
+#undef LO_INLINE
+#endif
+
+/* When compiling for an Apple universal build, allow compile-time
+ * macros to override autoconf endianness settings. */
+#ifdef LO_BIGENDIAN
+#undef LO_BIGENDIAN
+#endif
+#if 0 == 2
+#ifdef __BIG_ENDIAN__
+#define LO_BIGENDIAN 1
+#else
+#ifdef __LITTLE_ENDIAN__
+#define LO_BIGENDIAN 0
+#else
+#error Unknown endianness during Apple universal build.
+#endif
+#endif
+#else
+#define LO_BIGENDIAN 0
 #endif
 
 /* Host to OSC and OSC to Host conversion macros */
-
-#if 0
+#if LO_BIGENDIAN
 #define lo_htoo16(x) (x)
 #define lo_htoo32(x) (x)
 #define lo_htoo64(x) (x)
