@@ -29,24 +29,12 @@
 		E92003631859AD9A00415DFF /* server_thread.c in Sources */ = {isa = PBXBuildFile; fileRef = E920034E1859AD9A00415DFF /* server_thread.c */; };
 		E92003641859AD9A00415DFF /* timetag.c in Sources */ = {isa = PBXBuildFile; fileRef = E920034F1859AD9A00415DFF /* timetag.c */; };
 		E92003651859AD9A00415DFF /* timetag.c in Sources */ = {isa = PBXBuildFile; fileRef = E920034F1859AD9A00415DFF /* timetag.c */; };
-		E92729A618308DB2000E7BC5 /* artnet.c in Sources */ = {isa = PBXBuildFile; fileRef = E927299618308DB2000E7BC5 /* artnet.c */; };
-		E92729A718308DB2000E7BC5 /* misc.c in Sources */ = {isa = PBXBuildFile; fileRef = E927299918308DB2000E7BC5 /* misc.c */; };
-		E92729A818308DB2000E7BC5 /* network.c in Sources */ = {isa = PBXBuildFile; fileRef = E927299B18308DB2000E7BC5 /* network.c */; };
-		E92729A918308DB2000E7BC5 /* receive.c in Sources */ = {isa = PBXBuildFile; fileRef = E927299E18308DB2000E7BC5 /* receive.c */; };
-		E92729AA18308DB2000E7BC5 /* tod.c in Sources */ = {isa = PBXBuildFile; fileRef = E927299F18308DB2000E7BC5 /* tod.c */; };
-		E92729AB18308DB2000E7BC5 /* transmit.c in Sources */ = {isa = PBXBuildFile; fileRef = E92729A118308DB2000E7BC5 /* transmit.c */; };
 		E92729B51830973F000E7BC5 /* libusb-1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E92729AD1830973F000E7BC5 /* libusb-1.0.a */; };
 		E92729B61830973F000E7BC5 /* libusb-1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E92729AD1830973F000E7BC5 /* libusb-1.0.a */; };
 		E92729B71830973F000E7BC5 /* ftdi.c in Sources */ = {isa = PBXBuildFile; fileRef = E92729B01830973F000E7BC5 /* ftdi.c */; };
 		E92729B81830973F000E7BC5 /* ftdi.c in Sources */ = {isa = PBXBuildFile; fileRef = E92729B01830973F000E7BC5 /* ftdi.c */; };
 		E92729B91830973F000E7BC5 /* ftdi_stream.c in Sources */ = {isa = PBXBuildFile; fileRef = E92729B31830973F000E7BC5 /* ftdi_stream.c */; };
 		E92729BA1830973F000E7BC5 /* ftdi_stream.c in Sources */ = {isa = PBXBuildFile; fileRef = E92729B31830973F000E7BC5 /* ftdi_stream.c */; };
-		E92729BB1830974D000E7BC5 /* artnet.c in Sources */ = {isa = PBXBuildFile; fileRef = E927299618308DB2000E7BC5 /* artnet.c */; };
-		E92729BC18309751000E7BC5 /* misc.c in Sources */ = {isa = PBXBuildFile; fileRef = E927299918308DB2000E7BC5 /* misc.c */; };
-		E92729BD18309754000E7BC5 /* network.c in Sources */ = {isa = PBXBuildFile; fileRef = E927299B18308DB2000E7BC5 /* network.c */; };
-		E92729BE18309757000E7BC5 /* receive.c in Sources */ = {isa = PBXBuildFile; fileRef = E927299E18308DB2000E7BC5 /* receive.c */; };
-		E92729BF1830975B000E7BC5 /* tod.c in Sources */ = {isa = PBXBuildFile; fileRef = E927299F18308DB2000E7BC5 /* tod.c */; };
-		E92729C01830975D000E7BC5 /* transmit.c in Sources */ = {isa = PBXBuildFile; fileRef = E92729A118308DB2000E7BC5 /* transmit.c */; };
 		E939414F182C919900BDF381 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E939414E182C919900BDF381 /* Cocoa.framework */; };
 		E9394159182C919900BDF381 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9394157182C919900BDF381 /* InfoPlist.strings */; };
 		E939415B182C919900BDF381 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E939415A182C919900BDF381 /* main.m */; };
@@ -60,8 +48,6 @@
 		E9394179182C919900BDF381 /* ArtNetNodeMacTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E9394178182C919900BDF381 /* ArtNetNodeMacTests.m */; };
 		E99FEB081859B09400919375 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E99FEB071859B09400919375 /* IOKit.framework */; };
 		E99FEB091859B0A500919375 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E99FEB071859B09400919375 /* IOKit.framework */; };
-		E99FEB0A1859B0BE00919375 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E939419D182CA45F00BDF381 /* SystemConfiguration.framework */; };
-		E99FEB0B1859B0C800919375 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E939419D182CA45F00BDF381 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,19 +83,6 @@
 		E920034D1859AD9A00415DFF /* server.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = server.c; sourceTree = "<group>"; };
 		E920034E1859AD9A00415DFF /* server_thread.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = server_thread.c; sourceTree = "<group>"; };
 		E920034F1859AD9A00415DFF /* timetag.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = timetag.c; sourceTree = "<group>"; };
-		E927299618308DB2000E7BC5 /* artnet.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = artnet.c; sourceTree = "<group>"; };
-		E927299718308DB2000E7BC5 /* artnet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = artnet.h; sourceTree = "<group>"; };
-		E927299818308DB2000E7BC5 /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
-		E927299918308DB2000E7BC5 /* misc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = misc.c; sourceTree = "<group>"; };
-		E927299A18308DB2000E7BC5 /* misc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = misc.h; sourceTree = "<group>"; };
-		E927299B18308DB2000E7BC5 /* network.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = network.c; sourceTree = "<group>"; };
-		E927299C18308DB2000E7BC5 /* packets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = packets.h; sourceTree = "<group>"; };
-		E927299D18308DB2000E7BC5 /* private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = private.h; sourceTree = "<group>"; };
-		E927299E18308DB2000E7BC5 /* receive.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = receive.c; sourceTree = "<group>"; };
-		E927299F18308DB2000E7BC5 /* tod.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tod.c; sourceTree = "<group>"; };
-		E92729A018308DB2000E7BC5 /* tod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tod.h; sourceTree = "<group>"; };
-		E92729A118308DB2000E7BC5 /* transmit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = transmit.c; sourceTree = "<group>"; };
-		E92729A218308DB2000E7BC5 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
 		E92729AD1830973F000E7BC5 /* libusb-1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libusb-1.0.a"; sourceTree = "<group>"; };
 		E92729AE1830973F000E7BC5 /* libusb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libusb.h; sourceTree = "<group>"; };
 		E92729B01830973F000E7BC5 /* ftdi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ftdi.c; sourceTree = "<group>"; };
@@ -136,7 +109,6 @@
 		E9394174182C919900BDF381 /* ArtNetNodeMacTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ArtNetNodeMacTests-Info.plist"; sourceTree = "<group>"; };
 		E9394176182C919900BDF381 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E9394178182C919900BDF381 /* ArtNetNodeMacTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArtNetNodeMacTests.m; sourceTree = "<group>"; };
-		E939419D182CA45F00BDF381 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		E99FEB071859B09400919375 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -146,7 +118,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E939414F182C919900BDF381 /* Cocoa.framework in Frameworks */,
-				E99FEB0A1859B0BE00919375 /* SystemConfiguration.framework in Frameworks */,
 				E99FEB081859B09400919375 /* IOKit.framework in Frameworks */,
 				E92729B51830973F000E7BC5 /* libusb-1.0.a in Frameworks */,
 			);
@@ -158,7 +129,6 @@
 			files = (
 				E939416F182C919900BDF381 /* Cocoa.framework in Frameworks */,
 				E939416E182C919900BDF381 /* XCTest.framework in Frameworks */,
-				E99FEB0B1859B0C800919375 /* SystemConfiguration.framework in Frameworks */,
 				E99FEB091859B0A500919375 /* IOKit.framework in Frameworks */,
 				E92729B61830973F000E7BC5 /* libusb-1.0.a in Frameworks */,
 			);
@@ -202,34 +172,6 @@
 				E920034F1859AD9A00415DFF /* timetag.c */,
 			);
 			path = lo;
-			sourceTree = "<group>";
-		};
-		E927299418308DB2000E7BC5 /* libartnet */ = {
-			isa = PBXGroup;
-			children = (
-				E927299518308DB2000E7BC5 /* artnet */,
-				E92729A218308DB2000E7BC5 /* config.h */,
-			);
-			path = libartnet;
-			sourceTree = "<group>";
-		};
-		E927299518308DB2000E7BC5 /* artnet */ = {
-			isa = PBXGroup;
-			children = (
-				E927299618308DB2000E7BC5 /* artnet.c */,
-				E927299718308DB2000E7BC5 /* artnet.h */,
-				E927299818308DB2000E7BC5 /* common.h */,
-				E927299918308DB2000E7BC5 /* misc.c */,
-				E927299A18308DB2000E7BC5 /* misc.h */,
-				E927299B18308DB2000E7BC5 /* network.c */,
-				E927299C18308DB2000E7BC5 /* packets.h */,
-				E927299D18308DB2000E7BC5 /* private.h */,
-				E927299E18308DB2000E7BC5 /* receive.c */,
-				E927299F18308DB2000E7BC5 /* tod.c */,
-				E92729A018308DB2000E7BC5 /* tod.h */,
-				E92729A118308DB2000E7BC5 /* transmit.c */,
-			);
-			path = artnet;
 			sourceTree = "<group>";
 		};
 		E92729AC1830973F000E7BC5 /* libusb */ = {
@@ -278,7 +220,6 @@
 			children = (
 				E99FEB071859B09400919375 /* IOKit.framework */,
 				E939414E182C919900BDF381 /* Cocoa.framework */,
-				E939419D182CA45F00BDF381 /* SystemConfiguration.framework */,
 				E939416D182C919900BDF381 /* XCTest.framework */,
 				E9394150182C919900BDF381 /* Other Frameworks */,
 			);
@@ -343,7 +284,6 @@
 				E92003381859AD9A00415DFF /* liblo */,
 				E92729AC1830973F000E7BC5 /* libusb */,
 				E92729AF1830973F000E7BC5 /* libftdi1 */,
-				E927299418308DB2000E7BC5 /* libartnet */,
 			);
 			path = Vendor;
 			sourceTree = "<group>";
@@ -454,20 +394,14 @@
 				E92003621859AD9A00415DFF /* server_thread.c in Sources */,
 				E92003541859AD9A00415DFF /* bundle.c in Sources */,
 				E92003601859AD9A00415DFF /* server.c in Sources */,
-				E92729A818308DB2000E7BC5 /* network.c in Sources */,
 				E920035E1859AD9A00415DFF /* send.c in Sources */,
-				E92729A718308DB2000E7BC5 /* misc.c in Sources */,
 				E92003641859AD9A00415DFF /* timetag.c in Sources */,
 				E9394162182C919900BDF381 /* AppDelegate.m in Sources */,
 				E939415B182C919900BDF381 /* main.m in Sources */,
 				E92729B91830973F000E7BC5 /* ftdi_stream.c in Sources */,
-				E92729A918308DB2000E7BC5 /* receive.c in Sources */,
 				E920035C1859AD9A00415DFF /* pattern_match.c in Sources */,
 				E92003501859AD9A00415DFF /* address.c in Sources */,
-				E92729AB18308DB2000E7BC5 /* transmit.c in Sources */,
-				E92729AA18308DB2000E7BC5 /* tod.c in Sources */,
 				E92003521859AD9A00415DFF /* blob.c in Sources */,
-				E92729A618308DB2000E7BC5 /* artnet.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,22 +409,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E92729BD18309754000E7BC5 /* network.c in Sources */,
 				E920035F1859AD9A00415DFF /* send.c in Sources */,
-				E92729BC18309751000E7BC5 /* misc.c in Sources */,
 				E92003651859AD9A00415DFF /* timetag.c in Sources */,
 				E92729BA1830973F000E7BC5 /* ftdi_stream.c in Sources */,
 				E92003631859AD9A00415DFF /* server_thread.c in Sources */,
 				E92003551859AD9A00415DFF /* bundle.c in Sources */,
 				E92003531859AD9A00415DFF /* blob.c in Sources */,
 				E92729B81830973F000E7BC5 /* ftdi.c in Sources */,
-				E92729BE18309757000E7BC5 /* receive.c in Sources */,
-				E92729C01830975D000E7BC5 /* transmit.c in Sources */,
 				E920035B1859AD9A00415DFF /* method.c in Sources */,
 				E92003511859AD9A00415DFF /* address.c in Sources */,
-				E92729BF1830975B000E7BC5 /* tod.c in Sources */,
 				E9394179182C919900BDF381 /* ArtNetNodeMacTests.m in Sources */,
-				E92729BB1830974D000E7BC5 /* artnet.c in Sources */,
 				E92003591859AD9A00415DFF /* message.c in Sources */,
 				E92003611859AD9A00415DFF /* server.c in Sources */,
 				E920035D1859AD9A00415DFF /* pattern_match.c in Sources */,

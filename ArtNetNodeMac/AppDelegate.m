@@ -8,15 +8,12 @@
 
 #import "AppDelegate.h"
 
-#import <SystemConfiguration/SystemConfiguration.h>
-
-#include <artnet/artnet.h>
-#include <artnet/packets.h>
 #include <ftdi.h>
 #include <libusb.h>
+#include <lo/lo.h>
 
 static dispatch_semaphore_t semaphore;
-static unsigned char data[512];
+static unsigned char buffer[512];
 
 struct ftdi_context ftdic;
 
@@ -96,16 +93,20 @@ static int dmx_write(struct ftdi_context* ftdic, unsigned char* dmx, size_t size
 	return ret;
 }
 
-int artnetReceiver(artnet_node node, void *pp, void *d) {
-    artnet_packet pack = (artnet_packet) pp;
+static int dmx_universe_handler(const char *path, const char *types, lo_arg ** argv, int argc, void *data, void *user_data) {
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
 
-    if (pack->type == 0x5000) {
-        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-        memcpy(data, pack->data.admx.data, 512);
-        dispatch_semaphore_signal(semaphore);
-    }
-  
-    return ARTNET_EOK;
+    int datasize = lo_blob_datasize(argv[0]);
+    memcpy(buffer, lo_blob_dataptr(argv[0]), datasize > 512 ? 512 : datasize);
+
+    dispatch_semaphore_signal(semaphore);
+    
+    return 0;
+}
+
+void error(int num, const char *msg, const char *path)
+{
+    printf("liblo server error %d in path %s: %s\n", num, path, msg);
 }
 
 @implementation AppDelegate
@@ -142,72 +143,28 @@ int artnetReceiver(artnet_node node, void *pp, void *d) {
     exit(0);
     //*/
     
-    //dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        char *ip_addr = NULL;
-    
-        uint8_t subnet_addr = 0;
-        uint8_t port_addr = 1;
-        
-        artnet_node *artnetNode = artnet_new(ip_addr, 1);
-        
-        if (!artnetNode) {
-            printf("Error: %s\n", artnet_strerror());
-            exit(-1);
-        }
-        
-        NSString *computerName = (__bridge NSString *)SCDynamicStoreCopyComputerName(NULL, NULL);
-        
-        artnet_set_long_name(artnetNode, [[computerName stringByAppendingString:@" ArtNet Node"] UTF8String]);
-        artnet_set_short_name(artnetNode, [computerName UTF8String]);
-        
-        // set the upper 4 bits of the universe address
-        artnet_set_subnet_addr(artnetNode, subnet_addr) ;
-        
-        // enable port 0
-        artnet_set_port_type(artnetNode, 0, ARTNET_ENABLE_OUTPUT, ARTNET_PORT_DMX) ;
-        
-        // bind port 0 to universe 1
-        artnet_set_port_addr(artnetNode, 0, ARTNET_OUTPUT_PORT, port_addr);
-        
-        artnet_dump_config(artnetNode);
-        
-        artnet_set_handler(artnetNode, ARTNET_RECV_HANDLER, artnetReceiver, NULL);
-        
-        if (artnet_start(artnetNode) != 0) {
-            printf("Error: %s\n", artnet_strerror());
-            exit(-1);
-        }
-
     semaphore = dispatch_semaphore_create(1);
 
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-        unsigned char buf[513];
+        unsigned char dmx[513];
 
         dmx_init(&ftdic);
         
         while (1) {
-            
-            buf[0] = 0;
+            dmx[0] = 0;
 
             dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-            memcpy(buf + 1, data, 512);
+            memcpy(dmx + 1, buffer, 512);
             dispatch_semaphore_signal(semaphore);
             
-            dmx_write(&ftdic, buf, 513);
+            dmx_write(&ftdic, dmx, 513);
             usleep(100 * 1000);
         }
     });
     
-    
-    //dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-        while (1) {
-            artnet_read(artnetNode, 1);
-        }
-    //});
-    
-    // Use this to deallocate memory
-    //artnet_stop(artnetNode);
-    //artnet_destroy(artnetNode);
+    lo_server st = lo_server_thread_new("7770", error);
+    lo_server_thread_add_method(st, "/dmx/universe/0", "b", dmx_universe_handler, NULL);
+    lo_server_thread_start(st);
 }
 
 @end
