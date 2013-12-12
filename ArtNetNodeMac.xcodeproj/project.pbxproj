@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E92729B51830973F000E7BC5 /* libusb-1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E92729AD1830973F000E7BC5 /* libusb-1.0.a */; };
-		E92729B61830973F000E7BC5 /* libusb-1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E92729AD1830973F000E7BC5 /* libusb-1.0.a */; };
 		E92729B71830973F000E7BC5 /* ftdi.c in Sources */ = {isa = PBXBuildFile; fileRef = E92729B01830973F000E7BC5 /* ftdi.c */; };
 		E92729B81830973F000E7BC5 /* ftdi.c in Sources */ = {isa = PBXBuildFile; fileRef = E92729B01830973F000E7BC5 /* ftdi.c */; };
 		E92729B91830973F000E7BC5 /* ftdi_stream.c in Sources */ = {isa = PBXBuildFile; fileRef = E92729B31830973F000E7BC5 /* ftdi_stream.c */; };
@@ -46,6 +44,18 @@
 		E99FEB61185A02B100919375 /* server.c in Sources */ = {isa = PBXBuildFile; fileRef = E99FEB4E185A02B100919375 /* server.c */; };
 		E99FEB62185A02B100919375 /* timetag.c in Sources */ = {isa = PBXBuildFile; fileRef = E99FEB4F185A02B100919375 /* timetag.c */; };
 		E99FEB63185A02B100919375 /* timetag.c in Sources */ = {isa = PBXBuildFile; fileRef = E99FEB4F185A02B100919375 /* timetag.c */; };
+		E99FEB79185A042000919375 /* core.c in Sources */ = {isa = PBXBuildFile; fileRef = E99FEB64185A042000919375 /* core.c */; };
+		E99FEB7A185A042000919375 /* core.c in Sources */ = {isa = PBXBuildFile; fileRef = E99FEB64185A042000919375 /* core.c */; };
+		E99FEB7B185A042000919375 /* descriptor.c in Sources */ = {isa = PBXBuildFile; fileRef = E99FEB65185A042000919375 /* descriptor.c */; };
+		E99FEB7C185A042000919375 /* descriptor.c in Sources */ = {isa = PBXBuildFile; fileRef = E99FEB65185A042000919375 /* descriptor.c */; };
+		E99FEB7D185A042000919375 /* io.c in Sources */ = {isa = PBXBuildFile; fileRef = E99FEB66185A042000919375 /* io.c */; };
+		E99FEB7E185A042000919375 /* io.c in Sources */ = {isa = PBXBuildFile; fileRef = E99FEB66185A042000919375 /* io.c */; };
+		E99FEB7F185A042000919375 /* darwin_usb.c in Sources */ = {isa = PBXBuildFile; fileRef = E99FEB69185A042000919375 /* darwin_usb.c */; };
+		E99FEB80185A042000919375 /* darwin_usb.c in Sources */ = {isa = PBXBuildFile; fileRef = E99FEB69185A042000919375 /* darwin_usb.c */; };
+		E99FEB87185A042000919375 /* threads_posix.c in Sources */ = {isa = PBXBuildFile; fileRef = E99FEB71185A042000919375 /* threads_posix.c */; };
+		E99FEB88185A042000919375 /* threads_posix.c in Sources */ = {isa = PBXBuildFile; fileRef = E99FEB71185A042000919375 /* threads_posix.c */; };
+		E99FEB8D185A042000919375 /* sync.c in Sources */ = {isa = PBXBuildFile; fileRef = E99FEB77185A042000919375 /* sync.c */; };
+		E99FEB8E185A042000919375 /* sync.c in Sources */ = {isa = PBXBuildFile; fileRef = E99FEB77185A042000919375 /* sync.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +77,6 @@
 		E92003451859AD9A00415DFF /* lo_osc_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lo_osc_types.h; sourceTree = "<group>"; };
 		E92003461859AD9A00415DFF /* lo_throw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lo_throw.h; sourceTree = "<group>"; };
 		E92003471859AD9A00415DFF /* lo_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lo_types.h; sourceTree = "<group>"; };
-		E92729AD1830973F000E7BC5 /* libusb-1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libusb-1.0.a"; sourceTree = "<group>"; };
 		E92729AE1830973F000E7BC5 /* libusb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libusb.h; sourceTree = "<group>"; };
 		E92729B01830973F000E7BC5 /* ftdi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ftdi.c; sourceTree = "<group>"; };
 		E92729B11830973F000E7BC5 /* ftdi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ftdi.h; sourceTree = "<group>"; };
@@ -109,6 +118,18 @@
 		E99FEB4D185A02B100919375 /* server_thread.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = server_thread.c; sourceTree = "<group>"; };
 		E99FEB4E185A02B100919375 /* server.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = server.c; sourceTree = "<group>"; };
 		E99FEB4F185A02B100919375 /* timetag.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = timetag.c; sourceTree = "<group>"; };
+		E99FEB64185A042000919375 /* core.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = core.c; sourceTree = "<group>"; };
+		E99FEB65185A042000919375 /* descriptor.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = descriptor.c; sourceTree = "<group>"; };
+		E99FEB66185A042000919375 /* io.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = io.c; sourceTree = "<group>"; };
+		E99FEB67185A042000919375 /* libusbi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libusbi.h; sourceTree = "<group>"; };
+		E99FEB69185A042000919375 /* darwin_usb.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = darwin_usb.c; sourceTree = "<group>"; };
+		E99FEB6A185A042000919375 /* darwin_usb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = darwin_usb.h; sourceTree = "<group>"; };
+		E99FEB6E185A042000919375 /* poll_posix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = poll_posix.h; sourceTree = "<group>"; };
+		E99FEB71185A042000919375 /* threads_posix.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = threads_posix.c; sourceTree = "<group>"; };
+		E99FEB72185A042000919375 /* threads_posix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = threads_posix.h; sourceTree = "<group>"; };
+		E99FEB77185A042000919375 /* sync.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sync.c; sourceTree = "<group>"; };
+		E99FEB78185A042000919375 /* version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = version.h; sourceTree = "<group>"; };
+		E99FEB8F185A048E00919375 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +139,6 @@
 			files = (
 				E939414F182C919900BDF381 /* Cocoa.framework in Frameworks */,
 				E99FEB081859B09400919375 /* IOKit.framework in Frameworks */,
-				E92729B51830973F000E7BC5 /* libusb-1.0.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,7 +149,6 @@
 				E939416F182C919900BDF381 /* Cocoa.framework in Frameworks */,
 				E939416E182C919900BDF381 /* XCTest.framework in Frameworks */,
 				E99FEB091859B0A500919375 /* IOKit.framework in Frameworks */,
-				E92729B61830973F000E7BC5 /* libusb-1.0.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,8 +196,15 @@
 		E92729AC1830973F000E7BC5 /* libusb */ = {
 			isa = PBXGroup;
 			children = (
-				E92729AD1830973F000E7BC5 /* libusb-1.0.a */,
+				E99FEB8F185A048E00919375 /* config.h */,
+				E99FEB64185A042000919375 /* core.c */,
+				E99FEB65185A042000919375 /* descriptor.c */,
+				E99FEB66185A042000919375 /* io.c */,
 				E92729AE1830973F000E7BC5 /* libusb.h */,
+				E99FEB67185A042000919375 /* libusbi.h */,
+				E99FEB68185A042000919375 /* os */,
+				E99FEB77185A042000919375 /* sync.c */,
+				E99FEB78185A042000919375 /* version.h */,
 			);
 			path = libusb;
 			sourceTree = "<group>";
@@ -288,6 +314,18 @@
 			path = Vendor;
 			sourceTree = "<group>";
 		};
+		E99FEB68185A042000919375 /* os */ = {
+			isa = PBXGroup;
+			children = (
+				E99FEB69185A042000919375 /* darwin_usb.c */,
+				E99FEB6A185A042000919375 /* darwin_usb.h */,
+				E99FEB6E185A042000919375 /* poll_posix.h */,
+				E99FEB71185A042000919375 /* threads_posix.c */,
+				E99FEB72185A042000919375 /* threads_posix.h */,
+			);
+			path = os;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -386,17 +424,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E99FEB7D185A042000919375 /* io.c in Sources */,
+				E99FEB87185A042000919375 /* threads_posix.c in Sources */,
 				E92729B71830973F000E7BC5 /* ftdi.c in Sources */,
 				E99FEB50185A02B100919375 /* address.c in Sources */,
 				E9394162182C919900BDF381 /* AppDelegate.m in Sources */,
 				E99FEB62185A02B100919375 /* timetag.c in Sources */,
+				E99FEB7F185A042000919375 /* darwin_usb.c in Sources */,
 				E939415B182C919900BDF381 /* main.m in Sources */,
+				E99FEB79185A042000919375 /* core.c in Sources */,
 				E99FEB5A185A02B100919375 /* pattern_match.c in Sources */,
 				E99FEB58185A02B100919375 /* method.c in Sources */,
 				E99FEB5C185A02B100919375 /* send.c in Sources */,
 				E99FEB54185A02B100919375 /* bundle.c in Sources */,
 				E99FEB52185A02B100919375 /* blob.c in Sources */,
 				E92729B91830973F000E7BC5 /* ftdi_stream.c in Sources */,
+				E99FEB7B185A042000919375 /* descriptor.c in Sources */,
+				E99FEB8D185A042000919375 /* sync.c in Sources */,
 				E99FEB5E185A02B100919375 /* server_thread.c in Sources */,
 				E99FEB60185A02B100919375 /* server.c in Sources */,
 				E99FEB56185A02B100919375 /* message.c in Sources */,
@@ -409,17 +453,23 @@
 			files = (
 				E99FEB53185A02B100919375 /* blob.c in Sources */,
 				E99FEB63185A02B100919375 /* timetag.c in Sources */,
+				E99FEB88185A042000919375 /* threads_posix.c in Sources */,
 				E99FEB57185A02B100919375 /* message.c in Sources */,
 				E99FEB5F185A02B100919375 /* server_thread.c in Sources */,
+				E99FEB80185A042000919375 /* darwin_usb.c in Sources */,
 				E99FEB59185A02B100919375 /* method.c in Sources */,
 				E99FEB61185A02B100919375 /* server.c in Sources */,
 				E99FEB51185A02B100919375 /* address.c in Sources */,
 				E92729BA1830973F000E7BC5 /* ftdi_stream.c in Sources */,
 				E99FEB5D185A02B100919375 /* send.c in Sources */,
+				E99FEB8E185A042000919375 /* sync.c in Sources */,
 				E99FEB55185A02B100919375 /* bundle.c in Sources */,
+				E99FEB7A185A042000919375 /* core.c in Sources */,
 				E92729B81830973F000E7BC5 /* ftdi.c in Sources */,
 				E9394179182C919900BDF381 /* ArtNetNodeMacTests.m in Sources */,
+				E99FEB7E185A042000919375 /* io.c in Sources */,
 				E99FEB5B185A02B100919375 /* pattern_match.c in Sources */,
+				E99FEB7C185A042000919375 /* descriptor.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,6 +543,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 					HAVE_CONFIG_H,
+					LIBUSB_DESCRIBE,
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -535,7 +586,11 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = HAVE_CONFIG_H;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					HAVE_CONFIG_H,
+					LIBUSB_DESCRIBE,
+				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
