@@ -12,16 +12,8 @@
 		E92729B91830973F000E7BC5 /* ftdi_stream.c in Sources */ = {isa = PBXBuildFile; fileRef = E92729B31830973F000E7BC5 /* ftdi_stream.c */; };
 		E92729BA1830973F000E7BC5 /* ftdi_stream.c in Sources */ = {isa = PBXBuildFile; fileRef = E92729B31830973F000E7BC5 /* ftdi_stream.c */; };
 		E939414F182C919900BDF381 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E939414E182C919900BDF381 /* Cocoa.framework */; };
-		E9394159182C919900BDF381 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9394157182C919900BDF381 /* InfoPlist.strings */; };
-		E939415B182C919900BDF381 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E939415A182C919900BDF381 /* main.m */; };
-		E939415F182C919900BDF381 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E939415D182C919900BDF381 /* Credits.rtf */; };
-		E9394162182C919900BDF381 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E9394161182C919900BDF381 /* AppDelegate.m */; };
-		E9394165182C919900BDF381 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9394163182C919900BDF381 /* MainMenu.xib */; };
-		E9394167182C919900BDF381 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9394166182C919900BDF381 /* Images.xcassets */; };
 		E939416E182C919900BDF381 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E939416D182C919900BDF381 /* XCTest.framework */; };
 		E939416F182C919900BDF381 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E939414E182C919900BDF381 /* Cocoa.framework */; };
-		E9394177182C919900BDF381 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9394175182C919900BDF381 /* InfoPlist.strings */; };
-		E9394179182C919900BDF381 /* ArtNetNodeMacTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E9394178182C919900BDF381 /* ArtNetNodeMacTests.m */; };
 		E99FEB081859B09400919375 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E99FEB071859B09400919375 /* IOKit.framework */; };
 		E99FEB091859B0A500919375 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E99FEB071859B09400919375 /* IOKit.framework */; };
 		E99FEB50185A02B100919375 /* address.c in Sources */ = {isa = PBXBuildFile; fileRef = E99FEB43185A02B100919375 /* address.c */; };
@@ -56,6 +48,15 @@
 		E99FEB88185A042000919375 /* threads_posix.c in Sources */ = {isa = PBXBuildFile; fileRef = E99FEB71185A042000919375 /* threads_posix.c */; };
 		E99FEB8D185A042000919375 /* sync.c in Sources */ = {isa = PBXBuildFile; fileRef = E99FEB77185A042000919375 /* sync.c */; };
 		E99FEB8E185A042000919375 /* sync.c in Sources */ = {isa = PBXBuildFile; fileRef = E99FEB77185A042000919375 /* sync.c */; };
+		E99FEB98185AB21200919375 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E99FEB94185AB21200919375 /* AppDelegate.m */; };
+		E99FEB9A185AB21200919375 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E99FEB95185AB21200919375 /* MainMenu.xib */; };
+		E99FEB9B185AB21200919375 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E99FEB95185AB21200919375 /* MainMenu.xib */; };
+		E99FEB9C185AB21200919375 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E99FEB97185AB21200919375 /* Images.xcassets */; };
+		E99FEBA1185AB23200919375 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E99FEB9E185AB23200919375 /* main.m */; };
+		E99FEBAD185AB25800919375 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E99FEBA9185AB25800919375 /* Credits.rtf */; };
+		E99FEBAF185AB25800919375 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E99FEBAB185AB25800919375 /* InfoPlist.strings */; };
+		E99FEBB4185AB34900919375 /* OSC2OpenDMXUSBTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E99FEBB2185AB34900919375 /* OSC2OpenDMXUSBTests.m */; };
+		E99FEBB9185AB35800919375 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E99FEBB5185AB35800919375 /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +65,7 @@
 			containerPortal = E9394143182C919900BDF381 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = E939414A182C919900BDF381;
-			remoteInfo = ArtNetNodeMac;
+			remoteInfo = OSC2OpenDMXUSB;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -83,25 +84,13 @@
 		E92729B21830973F000E7BC5 /* ftdi_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ftdi_i.h; sourceTree = "<group>"; };
 		E92729B31830973F000E7BC5 /* ftdi_stream.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ftdi_stream.c; sourceTree = "<group>"; };
 		E92729B41830973F000E7BC5 /* ftdi_version_i.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ftdi_version_i.h; sourceTree = "<group>"; };
-		E939414B182C919900BDF381 /* ArtNetNodeMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArtNetNodeMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E939414B182C919900BDF381 /* OSC2OpenDMXUSB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OSC2OpenDMXUSB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E939414E182C919900BDF381 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		E9394151182C919900BDF381 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		E9394152182C919900BDF381 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		E9394153182C919900BDF381 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		E9394156182C919900BDF381 /* ArtNetNodeMac-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ArtNetNodeMac-Info.plist"; sourceTree = "<group>"; };
-		E9394158182C919900BDF381 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		E939415A182C919900BDF381 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		E939415C182C919900BDF381 /* ArtNetNodeMac-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ArtNetNodeMac-Prefix.pch"; sourceTree = "<group>"; };
-		E939415E182C919900BDF381 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		E9394160182C919900BDF381 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		E9394161182C919900BDF381 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E9394164182C919900BDF381 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		E9394166182C919900BDF381 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		E939416C182C919900BDF381 /* ArtNetNodeMacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArtNetNodeMacTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E939416C182C919900BDF381 /* OSC2OpenDMXUSBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OSC2OpenDMXUSBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E939416D182C919900BDF381 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		E9394174182C919900BDF381 /* ArtNetNodeMacTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ArtNetNodeMacTests-Info.plist"; sourceTree = "<group>"; };
-		E9394176182C919900BDF381 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		E9394178182C919900BDF381 /* ArtNetNodeMacTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArtNetNodeMacTests.m; sourceTree = "<group>"; };
 		E99FEB071859B09400919375 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		E99FEB41185A029500919375 /* lo_cpp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lo_cpp.h; sourceTree = "<group>"; };
 		E99FEB42185A029500919375 /* lo_serverthread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lo_serverthread.h; sourceTree = "<group>"; };
@@ -130,6 +119,18 @@
 		E99FEB77185A042000919375 /* sync.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sync.c; sourceTree = "<group>"; };
 		E99FEB78185A042000919375 /* version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = version.h; sourceTree = "<group>"; };
 		E99FEB8F185A048E00919375 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		E99FEB93185AB21200919375 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = OSC2OpenDMXUSB/AppDelegate.h; sourceTree = SOURCE_ROOT; };
+		E99FEB94185AB21200919375 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = OSC2OpenDMXUSB/AppDelegate.m; sourceTree = SOURCE_ROOT; };
+		E99FEB96185AB21200919375 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = OSC2OpenDMXUSB/Base.lproj/MainMenu.xib; sourceTree = SOURCE_ROOT; };
+		E99FEB97185AB21200919375 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = OSC2OpenDMXUSB/Images.xcassets; sourceTree = SOURCE_ROOT; };
+		E99FEB9E185AB23200919375 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = OSC2OpenDMXUSB/main.m; sourceTree = SOURCE_ROOT; };
+		E99FEB9F185AB23200919375 /* OSC2OpenDMXUSB-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "OSC2OpenDMXUSB-Info.plist"; path = "OSC2OpenDMXUSB/OSC2OpenDMXUSB-Info.plist"; sourceTree = SOURCE_ROOT; };
+		E99FEBA0185AB23200919375 /* OSC2OpenDMXUSB-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "OSC2OpenDMXUSB-Prefix.pch"; path = "OSC2OpenDMXUSB/OSC2OpenDMXUSB-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		E99FEBAA185AB25800919375 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = Credits.rtf; sourceTree = "<group>"; };
+		E99FEBAC185AB25800919375 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
+		E99FEBB2185AB34900919375 /* OSC2OpenDMXUSBTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OSC2OpenDMXUSBTests.m; path = OSC2OpenDMXUSBTests/OSC2OpenDMXUSBTests.m; sourceTree = SOURCE_ROOT; };
+		E99FEBB6185AB35800919375 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = OSC2OpenDMXUSBTests/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
+		E99FEBB7185AB35800919375 /* OSC2OpenDMXUSBTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "OSC2OpenDMXUSBTests-Info.plist"; path = "OSC2OpenDMXUSBTests/OSC2OpenDMXUSBTests-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,8 +225,8 @@
 		E9394142182C919900BDF381 = {
 			isa = PBXGroup;
 			children = (
-				E9394154182C919900BDF381 /* ArtNetNodeMac */,
-				E9394172182C919900BDF381 /* ArtNetNodeMacTests */,
+				E9394154182C919900BDF381 /* OSC2OpenDMXUSB */,
+				E9394172182C919900BDF381 /* OSC2OpenDMXUSBTests */,
 				E9394182182C922300BDF381 /* Vendor */,
 				E939414D182C919900BDF381 /* Frameworks */,
 				E939414C182C919900BDF381 /* Products */,
@@ -235,8 +236,8 @@
 		E939414C182C919900BDF381 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E939414B182C919900BDF381 /* ArtNetNodeMac.app */,
-				E939416C182C919900BDF381 /* ArtNetNodeMacTests.xctest */,
+				E939414B182C919900BDF381 /* OSC2OpenDMXUSB.app */,
+				E939416C182C919900BDF381 /* OSC2OpenDMXUSBTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -262,44 +263,44 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		E9394154182C919900BDF381 /* ArtNetNodeMac */ = {
+		E9394154182C919900BDF381 /* OSC2OpenDMXUSB */ = {
 			isa = PBXGroup;
 			children = (
-				E9394160182C919900BDF381 /* AppDelegate.h */,
-				E9394161182C919900BDF381 /* AppDelegate.m */,
-				E9394163182C919900BDF381 /* MainMenu.xib */,
-				E9394166182C919900BDF381 /* Images.xcassets */,
+				E99FEB93185AB21200919375 /* AppDelegate.h */,
+				E99FEB94185AB21200919375 /* AppDelegate.m */,
+				E99FEB95185AB21200919375 /* MainMenu.xib */,
+				E99FEB97185AB21200919375 /* Images.xcassets */,
 				E9394155182C919900BDF381 /* Supporting Files */,
 			);
-			path = ArtNetNodeMac;
+			path = OSC2OpenDMXUSB;
 			sourceTree = "<group>";
 		};
 		E9394155182C919900BDF381 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				E9394156182C919900BDF381 /* ArtNetNodeMac-Info.plist */,
-				E9394157182C919900BDF381 /* InfoPlist.strings */,
-				E939415A182C919900BDF381 /* main.m */,
-				E939415C182C919900BDF381 /* ArtNetNodeMac-Prefix.pch */,
-				E939415D182C919900BDF381 /* Credits.rtf */,
+				E99FEB9F185AB23200919375 /* OSC2OpenDMXUSB-Info.plist */,
+				E99FEBAB185AB25800919375 /* InfoPlist.strings */,
+				E99FEB9E185AB23200919375 /* main.m */,
+				E99FEBA0185AB23200919375 /* OSC2OpenDMXUSB-Prefix.pch */,
+				E99FEBA9185AB25800919375 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		E9394172182C919900BDF381 /* ArtNetNodeMacTests */ = {
+		E9394172182C919900BDF381 /* OSC2OpenDMXUSBTests */ = {
 			isa = PBXGroup;
 			children = (
-				E9394178182C919900BDF381 /* ArtNetNodeMacTests.m */,
+				E99FEBB2185AB34900919375 /* OSC2OpenDMXUSBTests.m */,
 				E9394173182C919900BDF381 /* Supporting Files */,
 			);
-			path = ArtNetNodeMacTests;
+			path = OSC2OpenDMXUSBTests;
 			sourceTree = "<group>";
 		};
 		E9394173182C919900BDF381 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				E9394174182C919900BDF381 /* ArtNetNodeMacTests-Info.plist */,
-				E9394175182C919900BDF381 /* InfoPlist.strings */,
+				E99FEBB7185AB35800919375 /* OSC2OpenDMXUSBTests-Info.plist */,
+				E99FEBB5185AB35800919375 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -329,9 +330,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E939414A182C919900BDF381 /* ArtNetNodeMac */ = {
+		E939414A182C919900BDF381 /* OSC2OpenDMXUSB */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E939417C182C919900BDF381 /* Build configuration list for PBXNativeTarget "ArtNetNodeMac" */;
+			buildConfigurationList = E939417C182C919900BDF381 /* Build configuration list for PBXNativeTarget "OSC2OpenDMXUSB" */;
 			buildPhases = (
 				E9394147182C919900BDF381 /* Sources */,
 				E9394148182C919900BDF381 /* Frameworks */,
@@ -341,14 +342,14 @@
 			);
 			dependencies = (
 			);
-			name = ArtNetNodeMac;
-			productName = ArtNetNodeMac;
-			productReference = E939414B182C919900BDF381 /* ArtNetNodeMac.app */;
+			name = OSC2OpenDMXUSB;
+			productName = OSC2OpenDMXUSB;
+			productReference = E939414B182C919900BDF381 /* OSC2OpenDMXUSB.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E939416B182C919900BDF381 /* ArtNetNodeMacTests */ = {
+		E939416B182C919900BDF381 /* OSC2OpenDMXUSBTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E939417F182C919900BDF381 /* Build configuration list for PBXNativeTarget "ArtNetNodeMacTests" */;
+			buildConfigurationList = E939417F182C919900BDF381 /* Build configuration list for PBXNativeTarget "OSC2OpenDMXUSBTests" */;
 			buildPhases = (
 				E9394168182C919900BDF381 /* Sources */,
 				E9394169182C919900BDF381 /* Frameworks */,
@@ -359,9 +360,9 @@
 			dependencies = (
 				E9394171182C919900BDF381 /* PBXTargetDependency */,
 			);
-			name = ArtNetNodeMacTests;
-			productName = ArtNetNodeMacTests;
-			productReference = E939416C182C919900BDF381 /* ArtNetNodeMacTests.xctest */;
+			name = OSC2OpenDMXUSBTests;
+			productName = OSC2OpenDMXUSBTests;
+			productReference = E939416C182C919900BDF381 /* OSC2OpenDMXUSBTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -378,7 +379,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E9394146182C919900BDF381 /* Build configuration list for PBXProject "ArtNetNodeMac" */;
+			buildConfigurationList = E9394146182C919900BDF381 /* Build configuration list for PBXProject "OSC2OpenDMXUSB" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -391,8 +392,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E939414A182C919900BDF381 /* ArtNetNodeMac */,
-				E939416B182C919900BDF381 /* ArtNetNodeMacTests */,
+				E939414A182C919900BDF381 /* OSC2OpenDMXUSB */,
+				E939416B182C919900BDF381 /* OSC2OpenDMXUSBTests */,
 			);
 		};
 /* End PBXProject section */
@@ -402,10 +403,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9394159182C919900BDF381 /* InfoPlist.strings in Resources */,
-				E9394167182C919900BDF381 /* Images.xcassets in Resources */,
-				E939415F182C919900BDF381 /* Credits.rtf in Resources */,
-				E9394165182C919900BDF381 /* MainMenu.xib in Resources */,
+				E99FEB9C185AB21200919375 /* Images.xcassets in Resources */,
+				E99FEB9A185AB21200919375 /* MainMenu.xib in Resources */,
+				E99FEBAD185AB25800919375 /* Credits.rtf in Resources */,
+				E99FEBAF185AB25800919375 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,7 +414,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9394177182C919900BDF381 /* InfoPlist.strings in Resources */,
+				E99FEBB9185AB35800919375 /* InfoPlist.strings in Resources */,
+				E99FEB9B185AB21200919375 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,10 +430,9 @@
 				E99FEB87185A042000919375 /* threads_posix.c in Sources */,
 				E92729B71830973F000E7BC5 /* ftdi.c in Sources */,
 				E99FEB50185A02B100919375 /* address.c in Sources */,
-				E9394162182C919900BDF381 /* AppDelegate.m in Sources */,
+				E99FEB98185AB21200919375 /* AppDelegate.m in Sources */,
 				E99FEB62185A02B100919375 /* timetag.c in Sources */,
 				E99FEB7F185A042000919375 /* darwin_usb.c in Sources */,
-				E939415B182C919900BDF381 /* main.m in Sources */,
 				E99FEB79185A042000919375 /* core.c in Sources */,
 				E99FEB5A185A02B100919375 /* pattern_match.c in Sources */,
 				E99FEB58185A02B100919375 /* method.c in Sources */,
@@ -443,6 +444,7 @@
 				E99FEB8D185A042000919375 /* sync.c in Sources */,
 				E99FEB5E185A02B100919375 /* server_thread.c in Sources */,
 				E99FEB60185A02B100919375 /* server.c in Sources */,
+				E99FEBA1185AB23200919375 /* main.m in Sources */,
 				E99FEB56185A02B100919375 /* message.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -457,6 +459,7 @@
 				E99FEB57185A02B100919375 /* message.c in Sources */,
 				E99FEB5F185A02B100919375 /* server_thread.c in Sources */,
 				E99FEB80185A042000919375 /* darwin_usb.c in Sources */,
+				E99FEBB4185AB34900919375 /* OSC2OpenDMXUSBTests.m in Sources */,
 				E99FEB59185A02B100919375 /* method.c in Sources */,
 				E99FEB61185A02B100919375 /* server.c in Sources */,
 				E99FEB51185A02B100919375 /* address.c in Sources */,
@@ -466,7 +469,6 @@
 				E99FEB55185A02B100919375 /* bundle.c in Sources */,
 				E99FEB7A185A042000919375 /* core.c in Sources */,
 				E92729B81830973F000E7BC5 /* ftdi.c in Sources */,
-				E9394179182C919900BDF381 /* ArtNetNodeMacTests.m in Sources */,
 				E99FEB7E185A042000919375 /* io.c in Sources */,
 				E99FEB5B185A02B100919375 /* pattern_match.c in Sources */,
 				E99FEB7C185A042000919375 /* descriptor.c in Sources */,
@@ -478,40 +480,42 @@
 /* Begin PBXTargetDependency section */
 		E9394171182C919900BDF381 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E939414A182C919900BDF381 /* ArtNetNodeMac */;
+			target = E939414A182C919900BDF381 /* OSC2OpenDMXUSB */;
 			targetProxy = E9394170182C919900BDF381 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E9394157182C919900BDF381 /* InfoPlist.strings */ = {
+		E99FEB95185AB21200919375 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E9394158182C919900BDF381 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		E939415D182C919900BDF381 /* Credits.rtf */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E939415E182C919900BDF381 /* en */,
-			);
-			name = Credits.rtf;
-			sourceTree = "<group>";
-		};
-		E9394163182C919900BDF381 /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E9394164182C919900BDF381 /* Base */,
+				E99FEB96185AB21200919375 /* Base */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
-		E9394175182C919900BDF381 /* InfoPlist.strings */ = {
+		E99FEBA9185AB25800919375 /* Credits.rtf */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E9394176182C919900BDF381 /* en */,
+				E99FEBAA185AB25800919375 /* en */,
+			);
+			name = Credits.rtf;
+			path = ../OSC2OpenDMXUSB/en.lproj;
+			sourceTree = "<group>";
+		};
+		E99FEBAB185AB25800919375 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E99FEBAC185AB25800919375 /* en */,
+			);
+			name = InfoPlist.strings;
+			path = ../OSC2OpenDMXUSB/en.lproj;
+			sourceTree = "<group>";
+		};
+		E99FEBB5185AB35800919375 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E99FEBB6185AB35800919375 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -555,10 +559,9 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					Vendor/libartnet,
-					Vendor/ftd2xx,
 					Vendor/libftdi1,
 					Vendor/libusb,
+					Vendor/liblo,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
@@ -600,10 +603,9 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					Vendor/libartnet,
-					Vendor/ftd2xx,
 					Vendor/libftdi1,
 					Vendor/libusb,
+					Vendor/liblo,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				SDKROOT = macosx;
@@ -616,21 +618,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ArtNetNodeMac/ArtNetNodeMac-Prefix.pch";
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					Vendor/libartnet,
-					Vendor/ftd2xx,
-					Vendor/libftdi1,
-					Vendor/libusb,
-					Vendor/liblo,
-				);
-				INFOPLIST_FILE = "ArtNetNodeMac/ArtNetNodeMac-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					Vendor/libusb,
-					/Users/tnayuki/Developer/Xcode/ArtNetNodeMac/Vendor/libusb,
-				);
+				GCC_PREFIX_HEADER = "OSC2OpenDMXUSB/OSC2OpenDMXUSB-Prefix.pch";
+				INFOPLIST_FILE = "OSC2OpenDMXUSB/OSC2OpenDMXUSB-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -642,21 +631,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ArtNetNodeMac/ArtNetNodeMac-Prefix.pch";
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					Vendor/libartnet,
-					Vendor/ftd2xx,
-					Vendor/libftdi1,
-					Vendor/libusb,
-					Vendor/liblo,
-				);
-				INFOPLIST_FILE = "ArtNetNodeMac/ArtNetNodeMac-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					Vendor/libusb,
-					/Users/tnayuki/Developer/Xcode/ArtNetNodeMac/Vendor/libusb,
-				);
+				GCC_PREFIX_HEADER = "OSC2OpenDMXUSB/OSC2OpenDMXUSB-Prefix.pch";
+				INFOPLIST_FILE = "OSC2OpenDMXUSB/OSC2OpenDMXUSB-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -665,23 +641,19 @@
 		E9394180182C919900BDF381 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ArtNetNodeMac.app/Contents/MacOS/ArtNetNodeMac";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/OSC2OpenDMXUSB.app/Contents/MacOS/OSC2OpenDMXUSB";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ArtNetNodeMac/ArtNetNodeMac-Prefix.pch";
+				GCC_PREFIX_HEADER = "OSC2OpenDMXUSB/OSC2OpenDMXUSB-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "ArtNetNodeMacTests/ArtNetNodeMacTests-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/tnayuki/Developer/Xcode/ArtNetNodeMac/Vendor/libusb,
-				);
+				INFOPLIST_FILE = "OSC2OpenDMXUSBTests/OSC2OpenDMXUSBTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -691,19 +663,15 @@
 		E9394181182C919900BDF381 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ArtNetNodeMac.app/Contents/MacOS/ArtNetNodeMac";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/OSC2OpenDMXUSB.app/Contents/MacOS/OSC2OpenDMXUSB";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ArtNetNodeMac/ArtNetNodeMac-Prefix.pch";
-				INFOPLIST_FILE = "ArtNetNodeMacTests/ArtNetNodeMacTests-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/tnayuki/Developer/Xcode/ArtNetNodeMac/Vendor/libusb,
-				);
+				GCC_PREFIX_HEADER = "OSC2OpenDMXUSB/OSC2OpenDMXUSB-Prefix.pch";
+				INFOPLIST_FILE = "OSC2OpenDMXUSBTests/OSC2OpenDMXUSBTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -713,7 +681,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E9394146182C919900BDF381 /* Build configuration list for PBXProject "ArtNetNodeMac" */ = {
+		E9394146182C919900BDF381 /* Build configuration list for PBXProject "OSC2OpenDMXUSB" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E939417A182C919900BDF381 /* Debug */,
@@ -722,7 +690,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E939417C182C919900BDF381 /* Build configuration list for PBXNativeTarget "ArtNetNodeMac" */ = {
+		E939417C182C919900BDF381 /* Build configuration list for PBXNativeTarget "OSC2OpenDMXUSB" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E939417D182C919900BDF381 /* Debug */,
@@ -731,7 +699,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E939417F182C919900BDF381 /* Build configuration list for PBXNativeTarget "ArtNetNodeMacTests" */ = {
+		E939417F182C919900BDF381 /* Build configuration list for PBXNativeTarget "OSC2OpenDMXUSBTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E9394180182C919900BDF381 /* Debug */,

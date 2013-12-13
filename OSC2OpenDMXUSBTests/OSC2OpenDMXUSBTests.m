@@ -1,6 +1,6 @@
 //
-//  ArtNetNodeMacTests.m
-//  ArtNetNodeMacTests
+//  OSC2OpenDMXUSBTests.m
+//  OSC2OpenDMXUSBTests
 //
 //  Created by Toru Nayuki on 2013/11/08.
 //  Copyright (c) 2013年 Toru Nayuki. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface ArtNetNodeMacTests : XCTestCase
+@interface OSC2OpenDMXUSBTests : XCTestCase
 
 @end
 
-@implementation ArtNetNodeMacTests
+@implementation OSC2OpenDMXUSBTests
 
 - (void)setUp
 {
