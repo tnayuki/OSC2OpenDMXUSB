@@ -6,4 +6,5 @@
   Copyright (c) 2013年 Toru Nayuki. All rights reserved.
 */
 
+BLACKOUT_MODE = "Blackout Mode";
 QUIT_APP = "Quit OSC2OpenDMXUSB";

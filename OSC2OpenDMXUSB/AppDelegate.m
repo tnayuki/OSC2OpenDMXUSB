@@ -110,6 +110,9 @@ void error(int num, const char *msg, const char *path)
 }
 
 @interface AppDelegate ()
+{
+    volatile bool _blackout;
+}
 
 @property(strong, nonatomic) NSStatusItem *statusItem;
 
@@ -120,36 +123,9 @@ void error(int num, const char *msg, const char *path)
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
-    /*
-    dmx_init(&ftdic);
-
-    for (int j = 0; j < 512; j++) {
-        data[j] = 0;
-    }
-
-    for (int i = 0; i < 255; i++) {
-        for (int j = 0; j < 512; j++) {
-            
-        }
-        
-        data[0] = 0;
-        data[1] = 255;
-        data[2] = i;
-        data[3] = i;
-        data[4] = i;
-        data[5] = 0;
-        data[6] = 0;
-        
-        dmx_write(&ftdic, data, 512);
-        
-        usleep(100 * 1000);
-    }
-    
-    printf("OK");
-    exit(0);
-    //*/
-
     NSMenu *menu = [[NSMenu alloc] init];
+    [menu addItem:[[NSMenuItem alloc] initWithTitle:NSLocalizedString(@"BLACKOUT_MODE", @"") action:@selector(switchBlackoutMode:) keyEquivalent:@""]];
+    [menu addItem:[NSMenuItem separatorItem]];
     [menu addItem:[[NSMenuItem alloc] initWithTitle:NSLocalizedString(@"QUIT_APP", @"") action:@selector(terminate:) keyEquivalent:@""]];
 
     self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
@@ -161,15 +137,18 @@ void error(int num, const char *msg, const char *path)
 
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         unsigned char dmx[513];
+        dmx[0] = 0;
 
         dmx_init(&ftdic);
         
         while (1) {
-            dmx[0] = 0;
-
-            dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-            memcpy(dmx + 1, buffer, 512);
-            dispatch_semaphore_signal(semaphore);
+            if (!_blackout) {
+                dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+                memcpy(dmx + 1, buffer, 512);
+                dispatch_semaphore_signal(semaphore);
+            } else {
+                memset(dmx + 1, 0, 512);
+            }
             
             dmx_write(&ftdic, dmx, 513);
             usleep(100 * 1000);
@@ -179,6 +158,13 @@ void error(int num, const char *msg, const char *path)
     lo_server st = lo_server_thread_new("7770", error);
     lo_server_thread_add_method(st, "/dmx/universe/0", "b", dmx_universe_handler, NULL);
     lo_server_thread_start(st);
+}
+
+- (void)switchBlackoutMode:(id)sender
+{
+    _blackout = !_blackout;
+    
+    [sender setState:_blackout ? NSOnState : NSOffState];
 }
 
 @end

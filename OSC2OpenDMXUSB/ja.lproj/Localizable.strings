@@ -6,4 +6,5 @@
   Copyright (c) 2013年 Toru Nayuki. All rights reserved.
 */
 
+BLACKOUT_MODE = "ブラックアウト モード";
 QUIT_APP = "OSC2OpenDMXUSB を終了する";
