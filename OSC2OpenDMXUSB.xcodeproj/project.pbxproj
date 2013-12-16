@@ -57,6 +57,7 @@
 		E99FEBAF185AB25800919375 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E99FEBAB185AB25800919375 /* InfoPlist.strings */; };
 		E99FEBB4185AB34900919375 /* OSC2OpenDMXUSBTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E99FEBB2185AB34900919375 /* OSC2OpenDMXUSBTests.m */; };
 		E99FEBB9185AB35800919375 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E99FEBB5185AB35800919375 /* InfoPlist.strings */; };
+		E99FEBFE185F3E4E00919375 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E99FEC00185F3E4E00919375 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +132,8 @@
 		E99FEBB2185AB34900919375 /* OSC2OpenDMXUSBTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OSC2OpenDMXUSBTests.m; path = OSC2OpenDMXUSBTests/OSC2OpenDMXUSBTests.m; sourceTree = SOURCE_ROOT; };
 		E99FEBB6185AB35800919375 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = OSC2OpenDMXUSBTests/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
 		E99FEBB7185AB35800919375 /* OSC2OpenDMXUSBTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "OSC2OpenDMXUSBTests-Info.plist"; path = "OSC2OpenDMXUSBTests/OSC2OpenDMXUSBTests-Info.plist"; sourceTree = SOURCE_ROOT; };
+		E99FEC01185F3E5200919375 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E99FEC02185F3E6200919375 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,6 +286,7 @@
 				E99FEB9E185AB23200919375 /* main.m */,
 				E99FEBA0185AB23200919375 /* OSC2OpenDMXUSB-Prefix.pch */,
 				E99FEBA9185AB25800919375 /* Credits.rtf */,
+				E99FEC00185F3E4E00919375 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -386,6 +390,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = E9394142182C919900BDF381;
 			productRefGroup = E939414C182C919900BDF381 /* Products */;
@@ -403,6 +408,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E99FEBFE185F3E4E00919375 /* Localizable.strings in Resources */,
 				E99FEB9C185AB21200919375 /* Images.xcassets in Resources */,
 				E99FEB9A185AB21200919375 /* MainMenu.xib in Resources */,
 				E99FEBAD185AB25800919375 /* Credits.rtf in Resources */,
@@ -518,6 +524,15 @@
 				E99FEBB6185AB35800919375 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E99FEC00185F3E4E00919375 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E99FEC01185F3E5200919375 /* en */,
+				E99FEC02185F3E6200919375 /* ja */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

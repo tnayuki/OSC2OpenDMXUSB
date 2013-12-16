@@ -109,6 +109,12 @@ void error(int num, const char *msg, const char *path)
     printf("liblo server error %d in path %s: %s\n", num, path, msg);
 }
 
+@interface AppDelegate ()
+
+@property(strong, nonatomic) NSStatusItem *statusItem;
+
+@end
+
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
@@ -142,6 +148,14 @@ void error(int num, const char *msg, const char *path)
     printf("OK");
     exit(0);
     //*/
+
+    NSMenu *menu = [[NSMenu alloc] init];
+    [menu addItem:[[NSMenuItem alloc] initWithTitle:NSLocalizedString(@"QUIT_APP", @"") action:@selector(terminate:) keyEquivalent:@""]];
+
+    self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
+    self.statusItem.title = @"D";
+    self.statusItem.highlightMode = YES;
+    self.statusItem.menu = menu;
     
     semaphore = dispatch_semaphore_create(1);
 
