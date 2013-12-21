@@ -14,6 +14,7 @@
 
 static dispatch_semaphore_t semaphore;
 static unsigned char buffer[512];
+static volatile BOOL active;
 
 struct ftdi_context ftdic;
 
@@ -101,6 +102,8 @@ static int dmx_universe_handler(const char *path, const char *types, lo_arg ** a
 
     dispatch_semaphore_signal(semaphore);
     
+    active = true;
+    
     return 0;
 }
 
@@ -132,6 +135,8 @@ void error(int num, const char *msg, const char *path)
     self.statusItem.image = [NSImage imageNamed:@"StatusItemIcon"];
     self.statusItem.highlightMode = YES;
     self.statusItem.menu = menu;
+    
+    [NSTimer scheduledTimerWithTimeInterval:0.1f target:self selector:@selector(indicateActive:) userInfo:nil repeats:YES];
     
     semaphore = dispatch_semaphore_create(1);
 
@@ -165,6 +170,13 @@ void error(int num, const char *msg, const char *path)
     _blackout = !_blackout;
     
     [sender setState:_blackout ? NSOnState : NSOffState];
+}
+
+- (void)indicateActive:(id)sender
+{
+    self.statusItem.image = active && !_blackout ? [NSImage imageNamed:@"StatusItemActiveIcon"] : [NSImage imageNamed:@"StatusItemIcon"];
+    
+    active = FALSE;
 }
 
 @end
