@@ -129,7 +129,7 @@ void error(int num, const char *msg, const char *path)
     [menu addItem:[[NSMenuItem alloc] initWithTitle:NSLocalizedString(@"QUIT_APP", @"") action:@selector(terminate:) keyEquivalent:@""]];
 
     self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
-    self.statusItem.title = @"D";
+    self.statusItem.image = [NSImage imageNamed:@"StatusItemIcon"];
     self.statusItem.highlightMode = YES;
     self.statusItem.menu = menu;
     
