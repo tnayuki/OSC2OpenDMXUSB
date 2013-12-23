@@ -82,14 +82,19 @@ static int dmx_write(struct ftdi_context* ftdic, unsigned char* dmx, size_t size
     
 	if ((ret = do_dmx_break(ftdic)) == EXIT_SUCCESS)
 	{
-    	if ((ret = ftdi_write_data_submit(ftdic, dmx, size)) < 0)
-    	{
-        	fprintf(stderr, "unable to write data: %d (%s)\n", ret, ftdi_get_error_string(ftdic));
-        	ret = EXIT_FAILURE;
-    	}
+        do {
+            if ((ret = ftdi_write_data(ftdic, dmx, (int)size)) < 0)
+            {
+                fprintf(stderr, "unable to write data: %d (%s)\n", ret, ftdi_get_error_string(ftdic));
+                ret = EXIT_FAILURE;
+                
+                return ret;
+            }
+            
+            size -= ret;
+            dmx += ret;
+        } while (size > 0);
 	}
-    
-    usleep(88 * 513);
     
 	return ret;
 }
