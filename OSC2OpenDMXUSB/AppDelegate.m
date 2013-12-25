@@ -15,6 +15,7 @@
 static dispatch_semaphore_t semaphore;
 static unsigned char buffer[512];
 static volatile BOOL active;
+static volatile BOOL blackout;
 
 struct ftdi_context ftdic;
 
@@ -99,6 +100,13 @@ static int dmx_write(struct ftdi_context* ftdic, unsigned char* dmx, size_t size
 	return ret;
 }
 
+static int dmx_blackout_handler(const char *path, const char *types, lo_arg ** argv, int argc, void *data, void *user_data) {
+    
+    blackout = !!argv[0]->i;
+    
+    return 0;
+}
+
 static int dmx_universe_handler(const char *path, const char *types, lo_arg ** argv, int argc, void *data, void *user_data) {
     dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
 
@@ -118,9 +126,6 @@ void error(int num, const char *msg, const char *path)
 }
 
 @interface AppDelegate ()
-{
-    volatile bool _blackout;
-}
 
 @property(strong, nonatomic) NSStatusItem *statusItem;
 
@@ -132,6 +137,7 @@ void error(int num, const char *msg, const char *path)
 {
     // Insert code here to initialize your application
     NSMenu *menu = [[NSMenu alloc] init];
+    menu.delegate = self;
     [menu addItem:[[NSMenuItem alloc] initWithTitle:NSLocalizedString(@"BLACKOUT_MODE", @"") action:@selector(switchBlackoutMode:) keyEquivalent:@""]];
     [menu addItem:[NSMenuItem separatorItem]];
     [menu addItem:[[NSMenuItem alloc] initWithTitle:NSLocalizedString(@"QUIT_APP", @"") action:@selector(terminate:) keyEquivalent:@""]];
@@ -152,7 +158,7 @@ void error(int num, const char *msg, const char *path)
         dmx_init(&ftdic);
         
         while (1) {
-            if (!_blackout) {
+            if (!blackout) {
                 dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
                 memcpy(dmx + 1, buffer, 512);
                 dispatch_semaphore_signal(semaphore);
@@ -166,22 +172,25 @@ void error(int num, const char *msg, const char *path)
     });
     
     lo_server st = lo_server_thread_new("7770", error);
+    lo_server_thread_add_method(st, "/dmx/blackout", "i", dmx_blackout_handler, NULL);
     lo_server_thread_add_method(st, "/dmx/universe/0", "b", dmx_universe_handler, NULL);
     lo_server_thread_start(st);
 }
 
 - (void)switchBlackoutMode:(id)sender
 {
-    _blackout = !_blackout;
-    
-    [sender setState:_blackout ? NSOnState : NSOffState];
+    blackout = !blackout;
 }
 
 - (void)indicateActive:(id)sender
 {
-    self.statusItem.image = active && !_blackout ? [NSImage imageNamed:@"StatusItemActiveIcon"] : [NSImage imageNamed:@"StatusItemIcon"];
+    self.statusItem.image = active && !blackout ? [NSImage imageNamed:@"StatusItemActiveIcon"] : [NSImage imageNamed:@"StatusItemIcon"];
     
     active = FALSE;
+}
+
+- (void)menuNeedsUpdate:(NSMenu *)menu {
+    ((NSMenuItem *)menu.itemArray[0]).state = blackout ? NSOnState : NSOffState;
 }
 
 @end
