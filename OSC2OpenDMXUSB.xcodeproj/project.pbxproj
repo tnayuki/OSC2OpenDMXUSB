@@ -14,6 +14,9 @@
 		E939414F182C919900BDF381 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E939414E182C919900BDF381 /* Cocoa.framework */; };
 		E939416E182C919900BDF381 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E939416D182C919900BDF381 /* XCTest.framework */; };
 		E939416F182C919900BDF381 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E939414E182C919900BDF381 /* Cocoa.framework */; };
+		E98B36B41E370495008F597C /* hotplug.c in Sources */ = {isa = PBXBuildFile; fileRef = E98B36B11E370495008F597C /* hotplug.c */; };
+		E98B36B51E370495008F597C /* strerror.c in Sources */ = {isa = PBXBuildFile; fileRef = E98B36B21E370495008F597C /* strerror.c */; };
+		E98B36B71E3704C1008F597C /* poll_posix.c in Sources */ = {isa = PBXBuildFile; fileRef = E98B36B61E3704C1008F597C /* poll_posix.c */; };
 		E99FEB081859B09400919375 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E99FEB071859B09400919375 /* IOKit.framework */; };
 		E99FEB091859B0A500919375 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E99FEB071859B09400919375 /* IOKit.framework */; };
 		E99FEB50185A02B100919375 /* address.c in Sources */ = {isa = PBXBuildFile; fileRef = E99FEB43185A02B100919375 /* address.c */; };
@@ -92,6 +95,11 @@
 		E9394153182C919900BDF381 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E939416C182C919900BDF381 /* OSC2OpenDMXUSBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OSC2OpenDMXUSBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E939416D182C919900BDF381 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		E98B36B01E370495008F597C /* version_nano.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = version_nano.h; sourceTree = "<group>"; };
+		E98B36B11E370495008F597C /* hotplug.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = hotplug.c; sourceTree = "<group>"; };
+		E98B36B21E370495008F597C /* strerror.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = strerror.c; sourceTree = "<group>"; };
+		E98B36B31E370495008F597C /* hotplug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hotplug.h; sourceTree = "<group>"; };
+		E98B36B61E3704C1008F597C /* poll_posix.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = poll_posix.c; sourceTree = "<group>"; };
 		E99FEB071859B09400919375 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		E99FEB41185A029500919375 /* lo_cpp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lo_cpp.h; sourceTree = "<group>"; };
 		E99FEB42185A029500919375 /* lo_serverthread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lo_serverthread.h; sourceTree = "<group>"; };
@@ -132,8 +140,8 @@
 		E99FEBB2185AB34900919375 /* OSC2OpenDMXUSBTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OSC2OpenDMXUSBTests.m; path = OSC2OpenDMXUSBTests/OSC2OpenDMXUSBTests.m; sourceTree = SOURCE_ROOT; };
 		E99FEBB6185AB35800919375 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = OSC2OpenDMXUSBTests/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
 		E99FEBB7185AB35800919375 /* OSC2OpenDMXUSBTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "OSC2OpenDMXUSBTests-Info.plist"; path = "OSC2OpenDMXUSBTests/OSC2OpenDMXUSBTests-Info.plist"; sourceTree = SOURCE_ROOT; };
-		E99FEC01185F3E5200919375 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		E99FEC02185F3E6200919375 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E99FEC01185F3E5200919375 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E99FEC02185F3E6200919375 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,12 +211,16 @@
 				E99FEB8F185A048E00919375 /* config.h */,
 				E99FEB64185A042000919375 /* core.c */,
 				E99FEB65185A042000919375 /* descriptor.c */,
+				E98B36B31E370495008F597C /* hotplug.h */,
+				E98B36B11E370495008F597C /* hotplug.c */,
 				E99FEB66185A042000919375 /* io.c */,
 				E92729AE1830973F000E7BC5 /* libusb.h */,
 				E99FEB67185A042000919375 /* libusbi.h */,
 				E99FEB68185A042000919375 /* os */,
+				E98B36B21E370495008F597C /* strerror.c */,
 				E99FEB77185A042000919375 /* sync.c */,
 				E99FEB78185A042000919375 /* version.h */,
+				E98B36B01E370495008F597C /* version_nano.h */,
 			);
 			path = libusb;
 			sourceTree = "<group>";
@@ -325,6 +337,7 @@
 				E99FEB69185A042000919375 /* darwin_usb.c */,
 				E99FEB6A185A042000919375 /* darwin_usb.h */,
 				E99FEB6E185A042000919375 /* poll_posix.h */,
+				E98B36B61E3704C1008F597C /* poll_posix.c */,
 				E99FEB71185A042000919375 /* threads_posix.c */,
 				E99FEB72185A042000919375 /* threads_posix.h */,
 			);
@@ -445,6 +458,9 @@
 				E99FEB5C185A02B100919375 /* send.c in Sources */,
 				E99FEB54185A02B100919375 /* bundle.c in Sources */,
 				E99FEB52185A02B100919375 /* blob.c in Sources */,
+				E98B36B41E370495008F597C /* hotplug.c in Sources */,
+				E98B36B51E370495008F597C /* strerror.c in Sources */,
+				E98B36B71E3704C1008F597C /* poll_posix.c in Sources */,
 				E92729B91830973F000E7BC5 /* ftdi_stream.c in Sources */,
 				E99FEB7B185A042000919375 /* descriptor.c in Sources */,
 				E99FEB8D185A042000919375 /* sync.c in Sources */,
