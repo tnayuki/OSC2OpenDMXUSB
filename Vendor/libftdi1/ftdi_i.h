@@ -2,7 +2,7 @@
                           ftdi_i.h  -  description
                              -------------------
     begin                : Don Sep 9 2011
-    copyright            : (C) 2003-2013 by Intra2net AG and the libftdi developers
+    copyright            : (C) 2003-2014 by Intra2net AG and the libftdi developers
     email                : opensource@intra2net.com
  ***************************************************************************/
 
@@ -61,7 +61,7 @@ struct ftdi_eeprom
     int usb_version;
     /** Use usb version on FT2232 devices*/
     int use_usb_version;
-     /** maximum power */
+    /** maximum power */
     int max_power;
 
     /** manufacturer name */
@@ -72,7 +72,7 @@ struct ftdi_eeprom
     char *serial;
 
     /* 2232D/H specific */
-    /* Hardware type, 0 = RS232 Uart, 1 = 245 FIFO, 2 = CPU FIFO, 
+    /* Hardware type, 0 = RS232 Uart, 1 = 245 FIFO, 2 = CPU FIFO,
        4 = OPTO Isolate */
     int channel_a_type;
     int channel_b_type;
@@ -98,6 +98,8 @@ struct ftdi_eeprom
     int high_current_b;
     /** Select inversion of data lines (bitmask). */
     int invert;
+    /** Enable external oscillator. */
+    int external_oscillator;
 
     /*2232H/4432H Group specific values */
     /* Group0 is AL on 2322H and A on 4232H
@@ -123,11 +125,19 @@ struct ftdi_eeprom
     int data_order;
     int flow_control;
 
+    /** user data **/
+    int user_data_addr;
+    int user_data_size;
+    const char *user_data;
+
     /** eeprom size in bytes. This doesn't get stored in the eeprom
         but is the only way to pass it to ftdi_eeprom_build. */
     int size;
     /* EEPROM Type 0x46 for 93xx46, 0x56 for 93xx56 and 0x66 for 93xx66*/
     int chip;
     unsigned char buf[FTDI_MAX_EEPROM_SIZE];
+
+    /** device release number */
+    int release_number;
 };
 

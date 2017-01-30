@@ -2,7 +2,7 @@
                           ftdi.h  -  description
                              -------------------
     begin                : Fri Apr 4 2003
-    copyright            : (C) 2003-2013 by Intra2net AG and the libftdi developers
+    copyright            : (C) 2003-2014 by Intra2net AG and the libftdi developers
     email                : opensource@intra2net.com
  ***************************************************************************/
 
@@ -20,8 +20,30 @@
 #include <stdint.h>
 #include <sys/time.h>
 
+/* 'interface' might be defined as a macro on Windows, so we need to
+ * undefine it so as not to break the current libftdi API, because
+ * struct ftdi_context has an 'interface' member
+ * As this can be problematic if you include windows.h after ftdi.h
+ * in your sources, we force windows.h to be included first. */
+#if defined(_WIN32) || defined(__CYGWIN__) || defined(_WIN32_WCE)
+#include <windows.h>
+#if defined(interface)
+#undef interface
+#endif
+#endif
+
 /** FTDI chip type */
-enum ftdi_chip_type { TYPE_AM=0, TYPE_BM=1, TYPE_2232C=2, TYPE_R=3, TYPE_2232H=4, TYPE_4232H=5, TYPE_232H=6 };
+enum ftdi_chip_type
+{
+    TYPE_AM=0,
+    TYPE_BM=1,
+    TYPE_2232C=2,
+    TYPE_R=3,
+    TYPE_2232H=4,
+    TYPE_4232H=5,
+    TYPE_232H=6,
+    TYPE_230X=7,
+};
 /** Parity mode for ftdi_set_line_property() */
 enum ftdi_parity_type { NONE=0, ODD=1, EVEN=2, MARK=3, SPACE=4 };
 /** Number of stop bits for ftdi_set_line_property() */
@@ -39,7 +61,7 @@ enum ftdi_mpsse_mode
     BITMODE_MPSSE  = 0x02,    /**< MPSSE mode, available on 2232x chips */
     BITMODE_SYNCBB = 0x04,    /**< synchronous bitbang mode, available on 2232x and R-type chips  */
     BITMODE_MCU    = 0x08,    /**< MCU Host Bus Emulation mode, available on 2232x chips */
-                              /* CPU-style fifo mode gets set via EEPROM */
+    /* CPU-style fifo mode gets set via EEPROM */
     BITMODE_OPTO   = 0x10,    /**< Fast Opto-Isolated Serial Interface Mode, available on 2232x chips  */
     BITMODE_CBUS   = 0x20,    /**< Bitbang on CBUS pins of R-type chips, configure in EEPROM before */
     BITMODE_SYNCFF = 0x40,    /**< Single Channel Synchronous FIFO mode, available on 2232H chips */
@@ -96,7 +118,7 @@ enum ftdi_module_detach_mode
 #define EN_ADAPTIVE     0x96
 #define DIS_ADAPTIVE    0x97
 #define CLK_BYTES_OR_HIGH 0x9c
-#define CLK_BYTES_OR_LOW  0x0d
+#define CLK_BYTES_OR_LOW  0x9d
 /*FT232H specific commands */
 #define DRIVE_OPEN_COLLECTOR 0x9e
 /* Value Low */
@@ -171,12 +193,12 @@ enum ftdi_module_detach_mode
 #define FTDI_URB_USERCONTEXT_COOKIE ((void *)0x1)
 
 #ifdef __GNUC__
-    #define DEPRECATED(func) func __attribute__ ((deprecated))
+#define DEPRECATED(func) func __attribute__ ((deprecated))
 #elif defined(_MSC_VER)
-    #define DEPRECATED(func) __declspec(deprecated) func
+#define DEPRECATED(func) __declspec(deprecated) func
 #else
-    #pragma message("WARNING: You need to implement DEPRECATED for this compiler")
-    #define DEPRECATED(func) func
+#pragma message("WARNING: You need to implement DEPRECATED for this compiler")
+#define DEPRECATED(func) func
 #endif
 
 struct ftdi_transfer_control
@@ -309,6 +331,9 @@ enum ftdi_eeprom_value
     CHANNEL_B_RS485    = 52,
     CHANNEL_C_RS485    = 53,
     CHANNEL_D_RS485    = 54,
+    RELEASE_NUMBER     = 55,
+    EXTERNAL_OSCILLATOR= 56,
+    USER_DATA_ADDR     = 57,
 };
 
 /**
@@ -327,15 +352,28 @@ struct ftdi_device_list
 #define POWER_SAVE_DISABLE_H 0x80
 
 #define USE_SERIAL_NUM 0x08
-enum ftdi_cbus_func {/* FIXME: Recheck value, especially the last */
+enum ftdi_cbus_func
+{
     CBUS_TXDEN = 0, CBUS_PWREN = 1, CBUS_RXLED = 2, CBUS_TXLED = 3, CBUS_TXRXLED = 4,
     CBUS_SLEEP = 5, CBUS_CLK48 = 6, CBUS_CLK24 = 7, CBUS_CLK12 = 8, CBUS_CLK6 =  9,
-    CBUS_IOMODE = 0xa, CBUS_BB_WR = 0xb, CBUS_BB_RD = 0xc, CBUS_BB   = 0xd};
+    CBUS_IOMODE = 0xa, CBUS_BB_WR = 0xb, CBUS_BB_RD = 0xc
+};
 
-enum ftdi_cbush_func {/* FIXME: Recheck value, especially the last */
-    CBUSH_TRISTATE = 0, CBUSH_RXLED = 1, CBUSH_TXLED = 2, CBUSH_TXRXLED = 3, CBUSH_PWREN = 4,
-    CBUSH_SLEEP = 5, CBUSH_DRIVE_0 = 6, CBUSG_DRIVE1 = 7, CBUSH_IOMODE = 8, CBUSH_TXDEN =  9,
-    CBUSH_CLK30 = 0xa, CBUSH_CLK15 = 0xb, CBUSH_CLK7_5 = 0xc};
+enum ftdi_cbush_func
+{
+    CBUSH_TRISTATE = 0, CBUSH_TXLED = 1, CBUSH_RXLED = 2, CBUSH_TXRXLED = 3, CBUSH_PWREN = 4,
+    CBUSH_SLEEP = 5, CBUSH_DRIVE_0 = 6, CBUSH_DRIVE1 = 7, CBUSH_IOMODE = 8, CBUSH_TXDEN =  9,
+    CBUSH_CLK30 = 10, CBUSH_CLK15 = 11, CBUSH_CLK7_5 = 12
+};
+
+enum ftdi_cbusx_func
+{
+    CBUSX_TRISTATE = 0, CBUSX_TXLED = 1, CBUSX_RXLED = 2, CBUSX_TXRXLED = 3, CBUSX_PWREN = 4,
+    CBUSX_SLEEP = 5, CBUSX_DRIVE_0 = 6, CBUSX_DRIVE1 = 7, CBUSX_IOMODE = 8, CBUSX_TXDEN =  9,
+    CBUSX_CLK24 = 10, CBUSX_CLK12 = 11, CBUSX_CLK6 = 12, CBUSX_BAT_DETECT = 13,
+    CBUSX_BAT_DETECT_NEG = 14, CBUSX_I2C_TXE = 15, CBUSX_I2C_RXF = 16, CBUSX_VBUS_SENSE = 17,
+    CBUSX_BB_WR = 18, CBUSX_BB_RD = 19, CBUSX_TIME_STAMP = 20, CBUSX_AWAKE = 21
+};
 
 /** Invert TXD# */
 #define INVERT_TXD 0x01
@@ -387,8 +425,8 @@ enum ftdi_cbush_func {/* FIXME: Recheck value, especially the last */
 */
 struct size_and_time
 {
-        uint64_t totalBytes;
-        struct timeval time;
+    uint64_t totalBytes;
+    struct timeval time;
 };
 
 typedef struct
@@ -435,22 +473,28 @@ extern "C"
     void ftdi_free(struct ftdi_context *ftdi);
     void ftdi_set_usbdev (struct ftdi_context *ftdi, struct libusb_device_handle *usbdev);
 
-    struct ftdi_version_info ftdi_get_library_version();
+    struct ftdi_version_info ftdi_get_library_version(void);
 
     int ftdi_usb_find_all(struct ftdi_context *ftdi, struct ftdi_device_list **devlist,
                           int vendor, int product);
     void ftdi_list_free(struct ftdi_device_list **devlist);
     void ftdi_list_free2(struct ftdi_device_list *devlist);
     int ftdi_usb_get_strings(struct ftdi_context *ftdi, struct libusb_device *dev,
-                             char * manufacturer, int mnf_len,
-                             char * description, int desc_len,
-                             char * serial, int serial_len);
+                             char *manufacturer, int mnf_len,
+                             char *description, int desc_len,
+                             char *serial, int serial_len);
+    int ftdi_usb_get_strings2(struct ftdi_context *ftdi, struct libusb_device *dev,
+                              char *manufacturer, int mnf_len,
+                              char *description, int desc_len,
+                              char *serial, int serial_len);
+    int ftdi_eeprom_set_strings(struct ftdi_context *ftdi, char * manufacturer,
+                                char * product, char * serial);
 
     int ftdi_usb_open(struct ftdi_context *ftdi, int vendor, int product);
     int ftdi_usb_open_desc(struct ftdi_context *ftdi, int vendor, int product,
                            const char* description, const char* serial);
     int ftdi_usb_open_desc_index(struct ftdi_context *ftdi, int vendor, int product,
-                           const char* description, const char* serial, unsigned int index);
+                                 const char* description, const char* serial, unsigned int index);
     int ftdi_usb_open_dev(struct ftdi_context *ftdi, struct libusb_device *dev);
     int ftdi_usb_open_string(struct ftdi_context *ftdi, const char* description);
 
@@ -471,7 +515,7 @@ extern "C"
     int ftdi_read_data_set_chunksize(struct ftdi_context *ftdi, unsigned int chunksize);
     int ftdi_read_data_get_chunksize(struct ftdi_context *ftdi, unsigned int *chunksize);
 
-    int ftdi_write_data(struct ftdi_context *ftdi, unsigned char *buf, int size);
+    int ftdi_write_data(struct ftdi_context *ftdi, const unsigned char *buf, int size);
     int ftdi_write_data_set_chunksize(struct ftdi_context *ftdi, unsigned int chunksize);
     int ftdi_write_data_get_chunksize(struct ftdi_context *ftdi, unsigned int *chunksize);
 
@@ -481,6 +525,7 @@ extern "C"
 
     struct ftdi_transfer_control *ftdi_read_data_submit(struct ftdi_context *ftdi, unsigned char *buf, int size);
     int ftdi_transfer_data_done(struct ftdi_transfer_control *tc);
+    void ftdi_transfer_data_cancel(struct ftdi_transfer_control *tc, struct timeval * to);
 
     int ftdi_set_bitmode(struct ftdi_context *ftdi, unsigned char bitmask, unsigned char mode);
     int ftdi_disable_bitbang(struct ftdi_context *ftdi);
@@ -501,9 +546,9 @@ extern "C"
     int ftdi_set_error_char(struct ftdi_context *ftdi, unsigned char errorch, unsigned char enable);
 
     /* init eeprom for the given FTDI type */
-    int ftdi_eeprom_initdefaults(struct ftdi_context *ftdi, 
-                                  char * manufacturer, char *product, 
-                                  char * serial);
+    int ftdi_eeprom_initdefaults(struct ftdi_context *ftdi,
+                                 char * manufacturer, char *product,
+                                 char * serial);
     int ftdi_eeprom_build(struct ftdi_context *ftdi);
     int ftdi_eeprom_decode(struct ftdi_context *ftdi, int verbose);
 
@@ -512,6 +557,8 @@ extern "C"
 
     int ftdi_get_eeprom_buf(struct ftdi_context *ftdi, unsigned char * buf, int size);
     int ftdi_set_eeprom_buf(struct ftdi_context *ftdi, const unsigned char * buf, int size);
+
+    int ftdi_set_eeprom_user_data(struct ftdi_context *ftdi, const char * buf, int size);
 
     int ftdi_read_eeprom(struct ftdi_context *ftdi);
     int ftdi_read_chipid(struct ftdi_context *ftdi, unsigned int *chipid);
